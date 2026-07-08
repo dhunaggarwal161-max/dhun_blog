@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Not Sound Like a LinkedIn Post — Dhun Aggarwal</title>
+<meta name="description" content="On self-esteem, leadership, and Jim Collins' Red Flag Method — or, why the most trustworthy voice in the room is the slightly unhinged one.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF6EC;
+    --cream-deep:#F1EAD9;
+    --forest:#243D30;
+    --forest-soft:#3A5A47;
+    --sage:#8FA98C;
+    --sage-pale:#C4D2BE;
+    --gold:#B8924A;
+    --gold-soft:#CBA85E;
+    --ink:#2A322B;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    line-height:1.75;
+    font-size:1.075rem;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* soft botanical wash top + bottom */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(60% 40% at 85% 0%, rgba(143,169,140,.14), transparent 60%),
+      radial-gradient(50% 35% at 0% 100%, rgba(184,146,74,.08), transparent 60%);
+    z-index:0;
+  }
+
+  .wrap{
+    position:relative;
+    z-index:1;
+    max-width:44rem;
+    margin:0 auto;
+    padding:clamp(2.5rem,6vw,5.5rem) 1.5rem 6rem;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    text-align:center;
+    margin-bottom:clamp(3rem,7vw,5rem);
+  }
+  .brand{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.78rem;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--sage);
+    text-decoration:none;
+  }
+  .brand:hover{color:var(--forest-soft);}
+
+  .sprig{
+    display:block;
+    margin:1.6rem auto .2rem;
+    width:64px;
+    height:auto;
+    color:var(--gold);
+  }
+
+  .eyebrow{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.72rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:1.1rem;
+  }
+
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    color:var(--forest);
+    font-size:clamp(2.5rem,7.5vw,4.2rem);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    margin:0 auto;
+    max-width:16ch;
+  }
+
+  .dateline{
+    margin-top:1.4rem;
+    font-size:.8rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--sage);
+  }
+
+  /* ---------- epigraph ---------- */
+  .epigraph{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(1.35rem,3.4vw,1.7rem);
+    line-height:1.4;
+    color:var(--forest-soft);
+    text-align:center;
+    max-width:30ch;
+    margin:0 auto clamp(2.5rem,6vw,4rem);
+  }
+  .epigraph em{color:var(--gold);font-style:italic;}
+
+  /* ---------- body ---------- */
+  article p{margin:0 0 1.5rem;}
+
+  article p.lead{font-size:1.14rem;}
+
+  /* drop cap on first body paragraph */
+  .lead::first-letter{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    float:left;
+    font-size:4.6rem;
+    line-height:.82;
+    padding:.35rem .6rem 0 0;
+    color:var(--gold);
+  }
+
+  article em{font-style:italic;color:var(--forest-soft);}
+
+  h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(1.75rem,4.6vw,2.35rem);
+    line-height:1.15;
+    color:var(--forest);
+    margin:3.2rem 0 1.4rem;
+    letter-spacing:-.005em;
+  }
+
+  /* ornamental divider */
+  .rule{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.9rem;
+    margin:3rem 0;
+    color:var(--sage);
+  }
+  .rule::before,.rule::after{
+    content:"";
+    height:1px;
+    width:min(30%,6rem);
+    background:linear-gradient(to right,transparent,var(--sage-pale),transparent);
+  }
+  .rule svg{width:15px;height:15px;color:var(--gold);flex:none;}
+
+  /* the closer */
+  .closer{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(1.4rem,3.6vw,1.85rem);
+    line-height:1.4;
+    color:var(--forest);
+    text-align:center;
+    margin-top:2.6rem;
+  }
+
+  /* two short beats near end of first section */
+  .beat{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--gold);
+    line-height:1.3;
+    margin:.1rem 0;
+  }
+  .beat + .beat{margin-bottom:1.5rem;}
+
+  /* ---------- footer ---------- */
+  footer{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding:2.5rem 1.5rem 3.5rem;
+    color:var(--sage);
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  footer a{color:var(--forest-soft);text-decoration:none;border-bottom:1px solid var(--sage-pale);padding-bottom:1px;}
+  footer a:hover{color:var(--gold);}
+
+  ::selection{background:var(--sage-pale);color:var(--forest);}
+
+  @media (max-width:480px){
+    .lead::first-letter{font-size:3.6rem;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="masthead">
+      <h1>How to Not Sound Like a LinkedIn Post</h1>
+    </header>
+
+    <p class="epigraph">There are two ways to hate something. One is to hate it. The other is to like it so much you start <em>explaining</em> it.</p>
+
+    <article>
+      <p class="lead">The internet is drowning in content. Earnest content. Sincere content. Content that sounds like it was written by someone who has never once been jealous, or awake past 2 a.m.</p>
+
+      <p>Nobody is reading <em>that.</em></p>
+
+      <p>If your work doesn't make a person want to keep going, it doesn't matter how true it is. It just… dies. Alone. It becomes that tab people close at 11:57 PM while thinking "I'll come back to this." After doomscrolling for another two hours — spoiler: they're not coming back.</p>
+
+      <p>Anyways, I kept that in mind.</p>
+
+      <div class="rule" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 4 4 5.5 8 6-4 .5-6.5 2-8 6-1.5-4-4-5.5-8-6 4-.5 6.5-2 8-6z"/></svg>
+      </div>
+
+      <h2>Self-esteem isn't "I'm amazing." It's "I am interesting enough to be honest."</h2>
+
+      <p>People often misunderstand how important self-esteem is. It's not positive self-talk. It's about accountability and the trust you have in yourself. You don't need to become a different person to have a strong voice. You can be strong while being the most afraid. You need to stop sanding your edges down until you sound like everybody. Because every time you do that, you're basically saying, "My real self is too much."</p>
+
+      <p>A leader with actual self-esteem can say "I don't know. I'm figuring it out. Also, this is mildly ridiculous."</p>
+
+      <p>And that's the moment the room unclenches. A leader without self-esteem performs confidence. They hide behind corporate language like it's a riot shield. They don't say "I'm scared," they say "we're navigating complexity." No shit, Sherlock.</p>
+
+      <p>But here's what actually happens: people don't trust you. Not because you're not smart enough, but because you sound like you don't trust <em>yourself</em>.</p>
+
+      <p>And everyone nods, because everyone's also scared of looking dumb. The people who feel the most real are usually the ones who let themselves be a bit… human-looking.</p>
+
+      <p class="beat">Slightly messy.</p>
+      <p class="beat">Slightly funny.</p>
+
+      <div class="rule" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 4 4 5.5 8 6-4 .5-6.5 2-8 6-1.5-4-4-5.5-8-6 4-.5 6.5-2 8-6z"/></svg>
+      </div>
+
+      <h2>The Leadership Trap We All Fall Into</h2>
+
+      <p>We've been taught that leaders are supposed to sound a certain way: confident, polished. Never awkward. Never self-deprecating. Never admitting that they're figuring things out as they go.</p>
+
+      <p>So we use words like "synergise," "pivot," and "leverage" because somewhere, someone told us that's what professionals sound like. There is nothing fundamentally wrong with sounding professional, but oftentimes people like you and me forget that other people are also like you and me. A great leader is not who makes people do work; it's the one who lets them do it. People believe control is the ultimate power, but it's actually trust that makes you truly powerful.</p>
+
+      <p>In <em>Good to Great</em>, Jim Collins talks about "confronting the brutal facts." But honestly, the fastest way to get those facts isn't another survey or a town hall — it's making people comfortable enough to say the slightly unhinged thing they've been editing in their head.</p>
+
+      <p>Because what's better feedback than criticism, right?</p>
+
+      <h2>The Red-Flag Method</h2>
+
+      <p>Not literally red flags in your boyfriend or girlfriend, but the practice of noticing when something feels off — when you're compromising. Jim started this technique where he lets college students say the truth, no matter what. He allots them red flags they can use to say their true feelings out loud without any consequences.</p>
+
+      <p>A true leader is the one who lets themselves loose — to believe that humans aren't perfect, and that they're human too.</p>
+
+      <p>So the next time you're in the position to take criticism, take it like a true leader.</p>
+
+      <p class="closer">kyuki befikra bhi hona zaruri h yaar….</p>
+    </article>
+
+  </div>
+
+  <footer>
+    <p>&copy; Dhun Aggarwal &nbsp;&middot;&nbsp; <a href="https://dhunaggarwal.in">dhunaggarwal.in</a></p>
+  </footer>
+</body>
+</html>
