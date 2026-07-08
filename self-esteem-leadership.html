@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How To Not Sound Like A LinkedIn Post — Dhun Aggarwal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2b21;--paper:#f6f3ec;--cream:#fdfbf6;--sage:#7d9573;
+    --forest:#3a5a40;--moss:#5a7355;--olive:#b5c4a4;--soft:#e8efe1;--gold:#a98b54;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',system-ui,sans-serif;font-weight:300;background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:720px;margin:0 auto;padding:0 28px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,243,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e3ddd0}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px;max-width:1080px;margin:0 auto;padding:0 28px}
+  .logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;font-weight:500;color:var(--forest);letter-spacing:.3px}
+  .nav-links{display:flex;gap:34px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--moss)}
+  .nav-links a{position:relative;padding:4px 0;transition:color .2s}
+  .nav-links a:hover{color:var(--forest)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--sage);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .sub-btn{background:var(--forest);color:var(--cream);padding:10px 24px;border-radius:30px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:background .2s}
+  .sub-btn:hover{background:var(--moss)}
+  .burger{display:none;font-size:24px;background:none;border:none;cursor:pointer;color:var(--forest)}
+
+  .article-head{background:var(--soft);padding:54px 0 48px;text-align:center}
+  .back{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--moss);margin-bottom:24px;transition:color .2s}
+  .back:hover{color:var(--forest)}
+  .cat{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .article-head h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,6vw,54px);line-height:1.1;color:var(--forest);max-width:18ch;margin:0 auto}
+  .byline{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:26px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--sage)}
+  .avatar{width:40px;height:40px;border-radius:50%;background:var(--olive);color:var(--forest);display:flex;align-items:center;justify-content:center;font-size:13px}
+
+  .hero-img{height:280px;background:linear-gradient(135deg,#7d9573,#3a5a40);display:flex;align-items:center;justify-content:center}
+  .hero-img span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:rgba(255,255,255,.85);text-align:center;padding:0 20px}
+
+  article{padding:54px 0 30px}
+  article p{font-size:18px;margin-bottom:24px;color:var(--ink)}
+  article p.lead{font-family:'Cormorant Garamond',serif;font-size:23px;line-height:1.5;color:var(--moss);font-style:italic}
+  article h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--forest);margin:44px 0 18px;line-height:1.2}
+  article .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;line-height:1.4;color:var(--forest);border-left:3px solid var(--sage);padding:6px 0 6px 26px;margin:36px 0}
+  article .stack{margin:22px 0}
+  article .stack span{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--moss)}
+  article .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--forest);margin-top:36px}
+  .next{text-align:center;margin-top:40px;padding-top:28px;border-top:1px solid #e3ddd0;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--sage)}
+
+  .news{margin:50px 0 0;background:var(--forest);border-radius:24px;padding:50px 36px;text-align:center;color:var(--cream);position:relative;overflow:hidden}
+  .news .kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--olive);margin-bottom:12px}
+  .news h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,5vw,36px);font-weight:500;margin-bottom:14px;color:var(--cream)}
+  .news p{font-size:15px;font-weight:300;max-width:40ch;margin:0 auto 24px;opacity:.9}
+  .news-form{display:flex;gap:10px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+  .news-form input{flex:1;min-width:200px;padding:14px 20px;border:none;border-radius:30px;font-family:inherit;font-size:14px;background:var(--cream);color:var(--ink)}
+  .news-form button{background:var(--olive);color:var(--forest);border:none;border-radius:30px;padding:14px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s}
+  .news-form button:hover{background:var(--soft)}
+
+  footer{border-top:1px solid #e3ddd0;padding:44px 0 32px;margin-top:60px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;max-width:1080px;margin:0 auto;padding:0 28px}
+  .foot .logo{color:var(--forest)}
+  .socials{display:flex;gap:14px}
+  .socials a{width:38px;height:38px;border:1px solid var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--moss);transition:background .2s,color .2s}
+  .socials a:hover{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+  .copy{text-align:center;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--sage);margin-top:26px}
+
+  @media(max-width:620px){
+    .nav-links{display:none}.burger{display:block}article p{font-size:17px}
+    .news{padding:44px 22px}
+    .news-form{flex-direction:column;flex-wrap:nowrap;gap:12px;width:100%;max-width:340px}
+    .news-form input{width:100%;min-width:0;font-size:16px}
+    .news-form button{width:100%;padding:18px 28px;font-size:13px;min-height:52px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Dhun Aggarwal</a>
+    <nav class="nav-links">
+      <a href="index.html#featured">Blog</a>
+      <a href="index.html#news">Letter</a>
+      <a href="index.html">About</a>
+    </nav>
+    <a href="index.html#news" class="sub-btn">Subscribe</a>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="wrap">
+    <a href="index.html" class="back">&larr; Back to all stories</a>
+    <p class="cat">On Leadership</p>
+    <h1>How To Not Sound Like A LinkedIn Post</h1>
+    <div class="byline">
+      <span class="avatar">DA</span>
+      <span>Dhun Aggarwal · July 8, 2026 · 5 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="hero-img"><span>"You are interesting enough to be honest."</span></div>
+
+<div class="wrap">
+  <article>
+    <p class="lead">Two ways to hate something: one is to hate it, the other is to like it so much you start explaining it.</p>
+
+    <p>The internet is drowning in content.</p>
+
+    <p>Earnest content. Sincere content. Content that sounds like it was written by someone who has never once been jealous, or awake past 2 am.</p>
+
+    <p>Nobody is reading that.</p>
+
+    <p>If your work doesn't make a person want to keep going, it doesn't matter how true it is. It just… dies. Alone. It becomes that tab people close at 11:57 PM while thinking "I'll come back to this." After doomscrolling for another 2 hours, spoiler: they're not coming back.</p>
+
+    <p>Anyways, I kept that in mind.</p>
+
+    <p class="pull">Self-esteem isn't "I'm amazing." It's "I am interesting enough to be honest."</p>
+
+    <p>People often misunderstand how important self-esteem is. It's not positive self-talk. It's about accountability and trust you have in yourself. You don't need to become a different person to have a strong voice. You can be strong while being the most afraid. You need to stop sanding your edges down until you sound like everybody. Because every time you do that, you're basically saying, "My real self is too much."</p>
+
+    <p>A leader with actual self-esteem can say "I don't know. I'm figuring it out. Also, this is mildly ridiculous."</p>
+
+    <p>And that's the moment the room unclenches. A leader without self-esteem performs confidence. They hide behind corporate language like it's a riot shield. They don't say "I'm scared," they say "we're navigating complexity." No shit Sherlock.</p>
+
+    <p>But here's what actually happens: people don't trust you. Not because you're not smart enough, but because you sound like you don't trust yourself.</p>
+
+    <p>And everyone nods, because everyone's also scared of looking dumb. The people who feel the most real are usually the ones who let themselves be a bit… human-looking.</p>
+
+    <div class="stack">
+      <span>Slightly messy.</span>
+      <span>Slightly funny.</span>
+    </div>
+
+    <h2>The Leadership Trap We All Fall Into</h2>
+
+    <p>We've been taught that leaders are supposed to sound a certain way: confident, polished. Never awkward. Never self-deprecating. Never admitting that they're figuring things out as they go.</p>
+
+    <p>So we use words like "synergise," "pivot," and "leverage" because somewhere, someone told us that's what professionals sound like. There is nothing fundamentally wrong with sounding professional but oftentimes people like you and me forget that other people are also like you and me. A great leader is not who makes people do work; it's the one who lets them do it. People believe control is the ultimate power but its actually trust that makes you truly powerful.</p>
+
+    <p>In Good to Great, Jim Collins talks about "confronting the brutal facts." But honestly, the fastest way to get those facts isn't another survey or a town hall it's making people comfortable enough to say the slightly unhinged thing they've been editing in their head.</p>
+
+    <p>Because what's better feedback than criticism, right?</p>
+
+    <h2>The Red-Flag Method</h2>
+
+    <p>Not literally red flags in your boyfriend or girlfriend, but the practice of noticing when something feels off, when you're compromising. Jim started this technique where he allows college students to say the truth no matter what. He allots them red flags that they can use to say their true feelings out loud without any consequences.</p>
+
+    <p>A true leader is the one who lets themselves loose, to believe that humans aren't perfect and that they are human too.</p>
+
+    <p>so the next time you're in the position to take criticism take it like a true leader</p>
+
+    <p class="sign">kyuki befikra bhi hona zaruri h yaar….</p>
+
+    <p class="next">Next Article — Coming Soon</p>
+  </article>
+
+  <section class="news">
+    <p class="kicker">The Sunday letter</p>
+    <h2>Come for the chaos, stay for the rest</h2>
+    <p>One little note every week — thoughts, nonsense, and things worth laughing about. No spam, ever.</p>
+    <form class="news-form" onsubmit="event.preventDefault();var f=this;var em=f.querySelector('input').value;fetch('https://docs.google.com/forms/d/e/1FAIpQLSes8d4AoMPuXdmVGLm_VCiQceo2vaaC9ADRYR4kQeVwHYlEIw/formResponse?entry.1408676600='+encodeURIComponent(em),{method:'POST',mode:'no-cors'});f.querySelector('input').value='';f.querySelector('button').textContent='Thanks! \u2713';">
+      <input type="email" placeholder="your@email.com" required aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+</div>
+
+<footer>
+  <div class="foot">
+    <a href="index.html" class="logo">Dhun Aggarwal</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/dhunaggarwal" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a href="https://www.linkedin.com/in/dhunaggarwal" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    </div>
+  </div>
+  <p class="copy">© 2026 Dhun Aggarwal · Made with love and too much coffee</p>
+</footer>
+
+</body>
+</html>
